@@ -54,35 +54,6 @@ void token::create( name   issuer,
         });
 }
 
-/*
-void token::issuenft(name to, asset quantity, string type, string race, string memo)
-{
-    eosio_assert( is_account( to ), "to account does not exist");
-    auto symbol = quantity.symbol;
-        eosio_assert( symbol.is_valid(), "invalid symbol name" );
-        eosio_assert( symbol.precision() == 0, "quantity must be a whole number" );
-        eosio_assert( memo.size() <= 256, "memo has more than 256 bytes" );
-
-	eosio_assert( tkn_name.size() <= 32, "name has more than 32 bytes" );
-
-    // Ensure currency has been created
-        auto symbol_name = symbol.code().raw();
-        table_index nftstat_table( _self, symbol_name );
-        auto existing_nftstat = nftstat_table.find( symbol_name );
-        eosio_assert( existing_nftstat != nftstat_table.end(), "token with symbol does not exist. create token before issue" );
-        const auto& st = *existing_nftstat;
-
-        // Ensure have issuer authorization and valid quantity
-        require_auth( st.issuer );
-        eosio_assert( quantity.is_valid(), "invalid quantity" );
-        eosio_assert( quantity.amount > 0, "must issue positive quantity of NFT" );
-        eosio_assert( symbol == st.supply.symbol, "symbol precision mismatch" );
-
-         // Increase supply
-	     add_supply( quantity );
-
-} 
-*/
 
 void token::issue( name to, asset quantity, string memo )
 {
