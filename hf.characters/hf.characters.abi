@@ -1,0 +1,199 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Feb 25 11:07:57 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "account",
+            "base": "",
+            "fields": [
+                {
+                    "name": "balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "create",
+            "base": "",
+            "fields": [
+                {
+                    "name": "issuer",
+                    "type": "name"
+                },
+                {
+                    "name": "symbol",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "issue",
+            "base": "",
+            "fields": [
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "character_name",
+                    "type": "string"
+                },
+                {
+                    "name": "race",
+                    "type": "string"
+                },
+                {
+                    "name": "_class",
+                    "type": "string"
+                },
+                {
+                    "name": "level",
+                    "type": "uint64"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "setrampayer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "payer",
+                    "type": "name"
+                },
+                {
+                    "name": "character_id",
+                    "type": "string"
+                },
+                {
+                    "name": "character_name",
+                    "type": "string"
+                },
+                {
+                    "name": "race",
+                    "type": "string"
+                },
+                {
+                    "name": "_class",
+                    "type": "string"
+                },
+                {
+                    "name": "level",
+                    "type": "uint64"
+                },
+                {
+                    "name": "id",
+                    "type": "id_type"
+                }
+            ]
+        },
+        {
+            "name": "stats",
+            "base": "",
+            "fields": [
+                {
+                    "name": "supply",
+                    "type": "asset"
+                },
+                {
+                    "name": "issuer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "token",
+            "base": "",
+            "fields": [
+                {
+                    "name": "index",
+                    "type": "id_type"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "character_id",
+                    "type": "string"
+                },
+                {
+                    "name": "character_name",
+                    "type": "string"
+                },
+                {
+                    "name": "race",
+                    "type": "string"
+                },
+                {
+                    "name": "_class",
+                    "type": "string"
+                },
+                {
+                    "name": "level",
+                    "type": "uint64"
+                },
+                {
+                    "name": "value",
+                    "type": "asset"
+                }
+            ]
+        }
+    ],
+    "types": [
+        {
+            "new_type_name": "id_type",
+            "type": "uint64"
+        }
+    ],
+    "actions": [
+        {
+            "name": "create",
+            "type": "create",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "issue",
+            "type": "issue",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "setrampayer",
+            "type": "setrampayer",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "accounts",
+            "type": "account",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "stat",
+            "type": "stats",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "token",
+            "type": "token",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}
