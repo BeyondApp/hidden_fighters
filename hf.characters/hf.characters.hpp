@@ -15,7 +15,7 @@ class [[eosio::contract("hf.characters")]] nft : public eosio::contract {
       }
 
          [[eosio::action]]
-        void create(name issuer, std::string symbol);
+        void create(name issuer, std::string sym);
 
          [[eosio::action]]
         void issue(name to, 
@@ -25,6 +25,12 @@ class [[eosio::contract("hf.characters")]] nft : public eosio::contract {
                     string _class,
                     uint64_t level,
                     string memo);
+
+         [[eosio::action]]
+         void transferid( name	from,
+                        name 	to,
+                        id_type	index,
+                        string	memo );
 
          [[eosio::action]]
 	      void setrampayer(name payer, string character_id,

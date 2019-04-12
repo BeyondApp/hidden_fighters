@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Feb 22 14:26:20 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Apr 12 11:43:36 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -9,34 +9,6 @@
                 {
                     "name": "balance",
                     "type": "asset"
-                }
-            ]
-        },
-        {
-            "name": "burn",
-            "base": "",
-            "fields": [
-                {
-                    "name": "owner",
-                    "type": "name"
-                },
-                {
-                    "name": "token_index",
-                    "type": "id_type"
-                }
-            ]
-        },
-        {
-            "name": "close",
-            "base": "",
-            "fields": [
-                {
-                    "name": "owner",
-                    "type": "name"
-                },
-                {
-                    "name": "symbol",
-                    "type": "symbol"
                 }
             ]
         },
@@ -105,20 +77,6 @@
                 {
                     "name": "memo",
                     "type": "string"
-                }
-            ]
-        },
-        {
-            "name": "setrampayer",
-            "base": "",
-            "fields": [
-                {
-                    "name": "payer",
-                    "type": "name"
-                },
-                {
-                    "name": "id",
-                    "type": "id_type"
                 }
             ]
         },
@@ -195,28 +153,6 @@
             ]
         },
         {
-            "name": "transfer",
-            "base": "",
-            "fields": [
-                {
-                    "name": "from",
-                    "type": "name"
-                },
-                {
-                    "name": "to",
-                    "type": "name"
-                },
-                {
-                    "name": "quantity",
-                    "type": "asset"
-                },
-                {
-                    "name": "memo",
-                    "type": "string"
-                }
-            ]
-        },
-        {
             "name": "transferid",
             "base": "",
             "fields": [
@@ -229,7 +165,7 @@
                     "type": "name"
                 },
                 {
-                    "name": "id",
+                    "name": "index",
                     "type": "id_type"
                 },
                 {
@@ -247,16 +183,6 @@
     ],
     "actions": [
         {
-            "name": "burn",
-            "type": "burn",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "close",
-            "type": "close",
-            "ricardian_contract": ""
-        },
-        {
             "name": "create",
             "type": "create",
             "ricardian_contract": ""
@@ -264,16 +190,6 @@
         {
             "name": "issue",
             "type": "issue",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "setrampayer",
-            "type": "setrampayer",
-            "ricardian_contract": ""
-        },
-        {
-            "name": "transfer",
-            "type": "transfer",
             "ricardian_contract": ""
         },
         {
