@@ -81,6 +81,42 @@ void nft::issue( name to,
 
         
 }
+ void nft::transferid( name	from,
+                        name 	to,
+                        id_type	index,
+                        string	memo ) {
+        // Ensure authorized to send from account
+        eosio_assert( from != to, "cannot transfer to self" );
+        require_auth( from );
+
+        // Ensure 'to' account exists
+        eosio_assert( is_account( to ), "to account does not exist");
+
+	// Check memo size and print
+        eosio_assert( memo.size() <= 256, "memo has more than 256 bytes" );
+
+        // Ensure token ID exists
+        auto send_token = tokens.find( index );
+        eosio_assert( send_token != tokens.end(), "token with specified ID does not exist" );
+
+	// Ensure owner owns token
+        eosio_assert( send_token->owner == from, "sender does not own token with specified ID");
+
+	const auto& st = *send_token;
+
+	// Notify both recipients
+        require_recipient( from );
+        require_recipient( to );
+
+        // Transfer NFT from sender to receiver
+        tokens.modify( send_token, from, [&]( auto& token ) {
+	        token.owner = to;
+        });
+
+        // Change balance of both accounts
+        sub_balance( from, st.value );
+        add_balance( to, st.value, from );
+}
 
 void nft::mint( name owner,
                 name ram_payer,
@@ -197,4 +233,4 @@ void nft::add_supply( asset quantity ) {
         });
 }
 
-EOSIO_DISPATCH( nft, (create)(issue)(setrampayer) )
+EOSIO_DISPATCH( nft, (create)(issue)(transferid)(setrampayer) )

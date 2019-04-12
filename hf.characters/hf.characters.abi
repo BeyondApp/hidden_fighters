@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Feb 25 11:07:57 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Apr 12 11:30:52 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -21,7 +21,7 @@
                     "type": "name"
                 },
                 {
-                    "name": "symbol",
+                    "name": "sym",
                     "type": "string"
                 }
             ]
@@ -145,6 +145,28 @@
                     "type": "asset"
                 }
             ]
+        },
+        {
+            "name": "transferid",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "index",
+                    "type": "id_type"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
         }
     ],
     "types": [
@@ -167,6 +189,11 @@
         {
             "name": "setrampayer",
             "type": "setrampayer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transferid",
+            "type": "transferid",
             "ricardian_contract": ""
         }
     ],

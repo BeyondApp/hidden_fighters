@@ -34,15 +34,13 @@ class [[eosio::contract("hf.items")]] nft : public eosio::contract {
                     string character_id,  
                     string memo);
 
-
          [[eosio::action]]
-        void burn(name owner, id_type token_index);
+        void transferid( name	from,
+                        name 	to,
+                        id_type	index,
+                        string	memo );
 
-         [[eosio::action]]
-	      void setrampayer(name payer, id_type id);
-
-         [[eosio::action]] 
-         void close( name owner, const symbol& symbol );
+        void setrampayer(name payer, id_type index);
 
         struct [[eosio::table]] account {
 
